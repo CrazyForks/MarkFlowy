@@ -334,6 +334,13 @@ export const getSettingMap = (
             i18nKey: 'settings.editor.behavior.typewriter_scroll.desc',
           },
         },
+        caretAnimation: {
+          key: 'editor_caret_animation',
+          type: 'switch',
+          defaultValue: false,
+          title: { i18nKey: 'settings.editor.behavior.caret_animation.label' },
+          desc: { i18nKey: 'settings.editor.behavior.caret_animation.desc' },
+        },
         linkEditMode: {
           key: 'editor_link_edit_mode',
           type: 'select',

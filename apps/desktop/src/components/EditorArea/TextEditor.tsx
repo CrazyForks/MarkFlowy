@@ -727,6 +727,9 @@ function TextEditor(props: TextEditorProps) {
   const codeEditorPreferences = useCodeEditorPreferences()
   const autosaveInterval = useAppSettingStore((state) => state.settingData.autosave_interval)
   const editorFullWidth = useAppSettingStore((state) => state.settingData.editor_full_width)
+  const editorCaretAnimation = useAppSettingStore(
+    (state) => state.settingData.editor_caret_animation === true,
+  )
   const linkEditMode = useAppSettingStore((state) =>
     state.settingData.editor_link_edit_mode === 'markdown' ? 'markdown' : 'popover',
   )
@@ -2475,6 +2478,7 @@ function TextEditor(props: TextEditorProps) {
     const generateCopilotText = hostOptions.ai?.copilot?.generateText
 
     return {
+      caretAnimation: editorCaretAnimation,
       snippets: snippetOptions,
       clipboard: capricornClipboard,
       commands: capricornClipboardCommands,
@@ -2529,6 +2533,7 @@ function TextEditor(props: TextEditorProps) {
       virtualize: CAPRICORN_DESKTOP_VIRTUALIZE_OPTIONS,
     }
   }, [
+    editorCaretAnimation,
     snippetOptions,
     delegateOptions,
     linkEditMode,

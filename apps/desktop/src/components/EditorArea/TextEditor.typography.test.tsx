@@ -43,6 +43,7 @@ const names = new Set([
   'printStyleToken',
   'themeFontSize',
   'wysiwygRootLineHeight',
+  'editorCaretAnimation',
   'linkEditMode',
   'globalTextDirection',
   'textDirectionKey',
@@ -129,6 +130,7 @@ const Harness = runInNewContext(compiled, {
     editor_root_line_height?: string
     editor_source_font_size?: number
     editor_source_line_height?: string
+    editor_caret_animation?: unknown
     editor_link_edit_mode?: 'popover' | 'markdown'
     editor_text_direction?: unknown
     editor_placeholder?: boolean
@@ -159,6 +161,16 @@ afterEach(() => {
 })
 
 describe('TextEditor Capricorn typography settings', () => {
+  it('updates caret animation from saved preferences and keeps it disabled for unset or invalid values', () => {
+    const onOptions = vi.fn()
+    const { rerender } = render(<Harness settings={{}} onOptions={onOptions} />)
+    expect(onOptions.mock.lastCall?.[0].caretAnimation).toBe(false)
+    for (const saved of [true, false, true, undefined, null, 'true']) {
+      rerender(<Harness settings={{ editor_caret_animation: saved }} onOptions={onOptions} />)
+      expect(onOptions.mock.lastCall?.[0].caretAnimation).toBe(saved === true)
+    }
+  })
+
   it('forwards embedded display and typography while keeping source typography independent', () => {
     const onOptions = vi.fn()
     const settings = {

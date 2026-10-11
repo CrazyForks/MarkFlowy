@@ -588,6 +588,10 @@
           "label": "Typewriter Scroll",
           "desc": "When enabled, the caret will be centered in the viewport during editing."
         },
+        "caret_animation": {
+          "label": "Smooth cursor",
+          "desc": "Animate the body text cursor in WYSIWYG mode. Follows the system's reduced-motion preference."
+        },
         "placeholder": {
           "label": "Placeholder",
           "desc": "When enabled, placeholder text will be displayed in empty paragraphs."
