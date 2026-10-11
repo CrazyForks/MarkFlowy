@@ -1,5 +1,49 @@
 # UPDATE LOG
 
+## v1.1.0
+
+Features:
+
+- **Open standalone files in separate windows.** Added **Settings → General → Application → Open single files in a new window**, enabled by default. Files outside the current workspace open in a new window, while workspace files stay in the current window. Turn it off to open other files in the current window too.
+
+- **Export PDFs with heading bookmarks.** Added **Export PDF** with A4 or Letter paper, portrait or landscape orientation, and optional heading bookmarks for navigating the document. Export uses a compatible local Chrome, Chromium, or Edge installation; automatic detection and manual browser selection are available under **Settings → Export → PDF Export**. System printing is also available through **Print…**.
+
+- **Reorder table rows and columns.In WYSIWYG mode, use a table row's menu to **Move row up** or **Move row down**, or a column's menu to **Move column left** or **Move column right**. Row moves keep the header fixed; column moves carry the header and alignment with them. Content, formatting, and selection are preserved, with undo/redo support.
+
+- **Restore automatic image sizing.** After resizing an image in WYSIWYG mode, hover or focus it and choose **Restore automatic size** from its actions. This removes explicit dimensions so the image uses its natural proportions within the available content width. Undo restores the previous size.
+
+Improvements:
+
+- Improved bookmark management with sorting by name or creation time, remembered sorting and grouping preferences, and an **Untagged** group. Existing bookmarks migrate automatically, changes stay in sync across windows, and conflicting edits prompt a reload while preserving your current edits.
+
+- Folder deletion confirmation now shows the target path and counts of contained files and subfolders before moving a folder to the trash or deleting it permanently. Incomplete counts are marked, and permanent deletion has a clearer warning.
+
+- Refined the draft-protection failure indicator into a compact warning icon. Hover or focus it to read the status, or click it to retry draft protection.
+
+- Updated Japanese translations throughout the app and added localized labels for table movement and automatic image sizing.
+
+---
+
+新功能：
+
+- **在独立窗口打开单文件。** 新增**设置 → 通用 → 应用 → 在新窗口打开单文件**，默认开启。工作区外的文件会在新窗口打开，当前工作区内的文件仍在当前窗口打开；关闭后，其他文件也会在当前窗口打开。
+
+- **导出带标题书签的 PDF。** 新增**导出 PDF**，支持 A4 或 Letter 纸张、横向或纵向，以及用于跳转文档标题的可选书签。导出使用本机兼容的 Chrome、Chromium 或 Edge，可在**设置 → 导出 → PDF 导出**中自动检测或手动选择浏览器；也可通过**打印…**使用系统打印。
+
+- **调整表格行列顺序。所见即所得模式下，通过表格行菜单选择**上移一行 / 下移一行**，或通过列菜单选择**左移一列 / 右移一列**。移动数据行时表头保持不变，移动列时表头与对齐方式一同移动；保留内容、格式与选区，支持撤销和重做。
+
+- **恢复图片自动尺寸。** 在所见即所得模式下调整图片大小后，悬停或聚焦图片，从操作按钮中选择**恢复自动尺寸**，即可清除固定宽高，让图片按原始比例适应内容区域宽度。撤销可恢复此前的尺寸。
+
+改进：
+
+- 完善书签管理，新增按名称或创建时间排序，记住排序与分组偏好，并在标签视图中显示**未分类**书签。旧书签自动迁移，多窗口之间同步更新；编辑冲突时保留当前修改，并提示重新加载。
+
+- 将文件夹移到回收站或永久删除前，确认框会显示目标路径及其中的文件、子文件夹数量。统计不完整时明确标注，永久删除的风险提示也更清楚。
+
+- 草稿保护失败提示改为紧凑的警告图标，悬停或聚焦可查看状态，点击即可重试草稿保护。
+
+- 更新应用中的日文翻译，并补齐表格移动与图片自动尺寸操作的多语言文案。
+
 ## v1.0.0
 
 After around three years of development and refinement, MarkFlowy has finally reached v1.0.0. Thank you to everyone who has used it, shared feedback, and contributed along the way.
